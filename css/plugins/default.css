@@ -3,7 +3,7 @@
     Theme Name: Spiral - Web Design Agency HTML Template
     Description: Web Design Agency HTML Template
     Author: Chitrakoot Web
-    Version: 1.0
+    Version: 1.1
 
 -----------------------------------------------------------------------------------*/
 
@@ -84,7 +84,7 @@ _:-ms-lang(x), .row > * { padding-right: 15px; padding-left: 15px; }
 .main-font { font-family: 'Mulish', sans-serif; }
 
 /* heading */
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {  font-weight: 800; font-family: 'Mulish', sans-serif; color: #1f2732;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {  font-weight: 800; font-family: 'Mulish', sans-serif; color: #1f2732; letter-spacing: -0.02em;}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {  font-weight: 800; font-family: 'Mulish', sans-serif; color: #1f2732;}
 
 /* font size */

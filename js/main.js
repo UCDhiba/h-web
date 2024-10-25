@@ -3,7 +3,7 @@
     Theme Name: Spiral - Web Design Agency HTML Template
     Description: Web Design Agency HTML Template
     Author: Chitrakoot Web
-    Version: 1.0
+    Version: 1.1
 
     /* ----------------------------------
 
@@ -18,14 +18,12 @@
         07. Resize function
         08. FullScreenHeight function
         09. ScreenFixedHeight function
-        10. Copy to clipboard
-        11. FullScreenHeight and screenHeight with resize function
-        12. Sliders
-        13. Tabs
-        14. CountUp
-        15. Countdown
-        16. Current Year
-        17. Gallery
+        10. FullScreenHeight and screenHeight with resize function
+        11. Sliders
+        12. CountUp
+        13. Countdown
+        14. Current Year
+        15. Gallery
         
     ---------------------------------- */    
 
@@ -62,7 +60,6 @@
                 logodefault.attr('src', 'img/logos/logo.png');
             }
         });
-
 
         /*------------------------------------
             03. Scroll To Top
@@ -105,12 +102,6 @@
         $('.story-video').magnificPopup({
             delegate: '.video',
             type: 'iframe'
-        });
-
-        $('.source-modal').magnificPopup({
-            type: 'inline',
-            mainClass: 'mfp-fade',
-            removalDelay: 160
         });
 
         /*------------------------------------
@@ -159,23 +150,7 @@
         }
 
         /*------------------------------------
-            10. Copy to clipboard
-        --------------------------------------*/
-
-        if ($(".copy-clipboard").length !== 0) {
-            new ClipboardJS('.copy-clipboard');
-            $('.copy-clipboard').on('click', function() {
-                var $this = $(this);
-                var originalText = $this.text();
-                $this.text('Copied');
-                setTimeout(function() {
-                    $this.text('Copy')
-                    }, 2000);
-            });
-        };
-
-        /*------------------------------------
-            11. FullScreenHeight and screenHeight with resize function
+            10. FullScreenHeight and screenHeight with resize function
         --------------------------------------*/        
 
         function SetResizeContent() {
@@ -189,57 +164,65 @@
     $(document).ready(function(){
 
         /*------------------------------------
-            12. Sliders
+            11. Sliders
         --------------------------------------*/
-
-        // testmonial-carousel3
-        $('.testimonial-carousel1').owlCarousel({
-            loop: true,
-            responsiveClass: true,
-            nav: false,
-            navText: ["<span class='fa-solid fa-arrow-left-long'></span>", "<span class='fa-solid fa-arrow-right-long'></span>"],
-            dots: true,
-            margin: 0,
-            center: false,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            smartSpeed: 1500,
-            items: 1,
-            responsive: {
-                992: {
-                    dots: false,
-                    nav: true
-                }
-            }
-        });
 
         // portfolio-carousel
         $('.portfolio-carousel').owlCarousel({
-            loop: true,
-            responsiveClass: true,
+            center: false,
+            items:1,
+            loop:true,
+            dots: false,
+            margin:40,
             autoplay: true,
             autoplayTimeout: 5000,
             smartSpeed: 1500,
-            nav: false,
-            dots: false,
-            center:false,
-            margin: 0,
-            responsive: {
+            responsive:{
                 0: {
                     items: 1
                 },
                 576: {
                     items: 2
                 },
-                768: {
-                    items: 3
-                },
                 992: {
                     items: 3
                 },
                 1200: {
                     items: 4
+                },
+                1400: {
+                    items: 5
                 }
+            }
+        }); 
+
+        // portfolio-carousel
+        $('.portfolio-carousel-02').owlCarousel({
+            loop: true,
+            responsiveClass: true,
+            autoplay: true,
+            center: false,
+            autoplayTimeout: 5000,
+            smartSpeed: 1500,            
+            nav: true,
+            navText: ["<i class='ti-arrow-left'></i>", "<i class='ti-arrow-right'></i>"],
+            dots: false,
+            margin: 30,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                576: {
+                    items: 2,
+                },
+                1200: {
+                    items: 3
+                },
+                1400: {
+                    items: 4
+                }
+
             }
         });
 
@@ -275,68 +258,14 @@
             loop: true,
             responsiveClass: true,
             nav: true,
-            navText: ["<span class='fa-solid fa-arrow-left-long'></span>", "<span class='fa-solid fa-arrow-right-long'></span>"],
+            navText: ["<i class='ti-arrow-left'></i>", "<i class='ti-arrow-right'></i>"],
             dots: false,
             margin: 50,
             center: false,
-            autoplay: false,
+            autoplay: true,
             autoplayTimeout: 5000,
             smartSpeed: 1500,
             items: 1
-        });
-
-        // service-carousel
-        $('.service-carousel').owlCarousel({
-            loop: true,
-            responsiveClass: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            smartSpeed: 1500,
-            nav: false,
-            dots: true,
-            center:false,
-            margin: 30,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                1200: {
-                    items: 3
-                }
-            }
-        });
-
-        // clients-carousel
-        $('.clients-carousel').owlCarousel({
-            loop: true,
-            responsiveClass: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            smartSpeed: 1500,
-            nav: false,
-            dots: false,
-            center:false,
-            margin: 30,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                576: {
-                    items: 2
-                },
-                768: {
-                    items: 3
-                },
-                992: {
-                    items: 3
-                },
-                1200: {
-                    items: 3
-                }
-            }
         });
 
         // clients02-carousel
@@ -421,7 +350,7 @@
 
 
         /*------------------------------------
-            14. CountUp
+            12. CountUp
         --------------------------------------*/
 
         $('.countup').counterUp({
@@ -430,17 +359,17 @@
         });
 
         /*------------------------------------
-            15. Countdown
+            13. Countdown
         --------------------------------------*/
 
         // CountDown for coming soon page
         $(".countdown").countdown({
-            date: "01 Mar 2026 00:01:00", //set your date and time. EX: 15 May 2025 12:00:00
+            date: "01 July 2026 00:01:00", //set your date and time. EX: 15 May 2025 12:00:00
             format: "on"
         });
 
         /*------------------------------------
-            16. Current Year
+            14. Current Year
         --------------------------------------*/
 
         $('.current-year').text(new Date().getFullYear());
@@ -451,7 +380,7 @@
     $window.on("load", function() {
 
         /*------------------------------------
-            17. Gallery
+            15. Gallery
         --------------------------------------*/
 
         $('.portfolio-gallery').lightGallery();
